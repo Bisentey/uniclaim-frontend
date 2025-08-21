@@ -397,3 +397,9 @@ footer {
   text-decoration: none !important;
   color: var(--bs-link-hover-color);
 }
+
+/* Wider modal button */
+.btn-modal-wide {
+  --bs-btn-padding-x: 1.25rem; /* wider left/right padding */
+  min-width: 140px; /* consistent width */
+}
