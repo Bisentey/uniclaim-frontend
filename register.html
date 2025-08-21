@@ -7,86 +7,138 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
   </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
+  <body class="d-flex flex-column min-vh-100">
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg border-bottom sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">UniClaim</a>
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+            <img src="assets/img/uniclaim-logo-ver-two.svg" alt="UniClaim Logo" height="32" class="me-2" />
+            UniClaim
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div id="nav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="register.html">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-primary px-3 fw-bold" href="login.html">Login</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <main class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 col-xl-6">
-          <h1 class="h3 mb-4">Create Account</h1>
-          <form novalidate>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <label for="firstName" class="form-label">First Name</label>
-                <input id="firstName" type="text" class="form-control" required />
-                <div class="invalid-feedback">First name is required.</div>
-              </div>
-              <div class="col-md-4">
-                <label for="middleName" class="form-label">Middle Name</label>
-                <input id="middleName" type="text" class="form-control" />
-              </div>
-              <div class="col-md-4">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input id="lastName" type="text" class="form-control" required />
-                <div class="invalid-feedback">Last name is required.</div>
-              </div>
-              <div class="col-md-4">
-                <label for="suffix" class="form-label">Suffix</label>
-                <input id="suffix" type="text" class="form-control" placeholder="Jr., III (optional)" />
-              </div>
-              <div class="col-md-8">
-                <label for="email" class="form-label">School Email</label>
-                <input id="email" type="email" class="form-control" placeholder="name@school.edu" required />
-                <div class="invalid-feedback">Valid school email is required.</div>
-              </div>
-              <div class="col-md-6">
-                <label for="password" class="form-label">Password</label>
-                <input id="password" type="password" class="form-control" minlength="8" required />
-                <div class="form-text">At least 8 characters.</div>
-                <div class="invalid-feedback">Please enter a password (≥ 8 chars).</div>
-              </div>
-              <div class="col-md-6">
-                <label for="confirm" class="form-label">Confirm Password</label>
-                <input id="confirm" type="password" class="form-control" minlength="8" required />
-                <div class="invalid-feedback">Passwords must match.</div>
-              </div>
-            </div>
-            <div class="d-grid d-sm-flex gap-2 justify-content-end mt-4">
-              <a href="index.html" class="btn btn-outline-secondary">Cancel</a>
-              <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </main>
+    <main class="auth-main flex-grow-1">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 col-xl-6">
+        <div class="card shadow-lg border-0 rounded-4">
+          <div class="card-body p-4 p-md-5">
+            <h1 class="h3 mb-5 fw-bold text-center">Register</h1>
+            <form novalidate>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input id="firstName" type="text" class="form-control" required />
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="middleName" class="form-label">Middle Name</label>
+                  <input id="middleName" type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input id="lastName" type="text" class="form-control" required />
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="suffix" class="form-label">Suffix</label>
+                  <input id="suffix" type="text" class="form-control" placeholder="Jr., III (optional)" />
+                </div>
+                <div class="col-md-8">
+                  <label for="email" class="form-label">School Email</label>
+                  <input id="email" type="email" class="form-control" placeholder="name@school.edu" required />
+                  <div class="invalid-feedback">Valid school email is required.</div>
+                </div>
+                <div class="col-md-6">
+  <label for="password" class="form-label">Password</label>
+  <div class="input-group">
+    <input id="password" type="password" class="form-control" minlength="8" required autocomplete="new-password" />
+    <button type="button" class="btn btn-outline-secondary" id="togglePwd" aria-label="Show password">
+      <i class="bi bi-eye"></i>
+    </button>
+  </div>
+  <div class="form-text">At least 8 characters.</div>
+  <div class="invalid-feedback">Please enter a password (≥ 8 chars).</div>
+</div>
 
-    <!-- Footer -->
-    <footer class="mt-5 py-4 border-top bg-light">
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-        <p class="mb-0 small text-muted">© 2025 UniClaim Lost &amp; Found — For academic use</p>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 small" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="login.html">Login</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="forgot.html">Forgot Password</a></li>
-        </ul>
+<div class="col-md-6">
+  <label for="confirm" class="form-label">Confirm Password</label>
+  <div class="input-group">
+    <input id="confirm" type="password" class="form-control" minlength="8" required autocomplete="new-password" />
+    <button type="button" class="btn btn-outline-secondary" id="toggleCfm" aria-label="Show confirm password">
+      <i class="bi bi-eye"></i>
+    </button>
+  </div>
+  <div class="invalid-feedback">Passwords must match.</div>
+</div>
+
+             <div class="mt-4 d-grid d-sm-flex py-3 px-4 justify-content-end">
+            <button type="submit" class="btn btn-primary btn-register w-100 w-sm-auto">Register</button>
+            </div>
+
+            </form>
+            <div class="text-center mt-3">
+            <p class="small mb-0">
+                Already have an account? 
+                <a href="login.html" class="fw-semibold text-primary text-decoration-none">Login here</a>
+            </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Optional: tiny helper text under the card -->
+        <p class="text-center text-white-50 small mt-3 mb-0">By creating an account, you agree to our Terms & Privacy Policy.</p>
       </div>
+    </div>
+  </div>
+</main>
+
+
+    <!-- FOOTER -->
+    <footer class="navbar navbar-expand-lg border-top">
+    <div class="container py-3">
+        
+        <p class="mb-0 small text-muted ">© UniClaim 2025</p>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse show">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn px-3" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn px-3" href="forgot.html">Forgot Password</a>
+            </li>
+        </ul>
+        </div>
+    </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -105,5 +157,32 @@
         });
       })();
     </script>
+    <script>
+  // Show/hide password toggles
+  (function () {
+    function bindToggle(btnId, inputId) {
+      const btn = document.getElementById(btnId);
+      const input = document.getElementById(inputId);
+      if (!btn || !input) return;
+
+      btn.addEventListener('click', () => {
+        const reveal = input.type === 'password';
+        input.type = reveal ? 'text' : 'password';
+
+        const icon = btn.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('bi-eye', !reveal);
+          icon.classList.toggle('bi-eye-slash', reveal);
+        }
+        btn.setAttribute('aria-label', reveal ? 'Hide password' : 'Show password');
+        input.focus();
+      });
+    }
+
+    bindToggle('togglePwd', 'password');
+    bindToggle('toggleCfm', 'confirm');
+  })();
+</script>
+
   </body>
 </html>
