@@ -14,22 +14,6 @@ Responsive Bootstrap 5 layouts for **Homepage**, **Registration**, **Login**, an
 - Bootstrap 5 via CDN
 - Organized assets folder (`assets/css/style.css`, `assets/img/`)
 
-## Run locally
-
-Open any HTML file in your browser (no build step required).
-
-## GitHub Pages (optional)
-
-1. Push to GitHub
-2. Repo → Settings → Pages → Source: `main` → `/root` → Save
-3. Share the Pages URL in the LMS
-
 ## Group Members
 
-- Name 1 — ID
-- Name 2 — ID
-- Name 3 — ID
-
-## Screenshots
-
-Place screenshots in `assets/img/` or embed here.
+- Vicente Miguel N. Alcala

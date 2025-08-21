@@ -5,31 +5,111 @@
   --brand-white: #ffffff;
   --brand-grey: #f8f9fa; /* light grey for backgrounds */
   --brand-dark: #2c2f33; /* dark grey for text or future dark mode */
+
+  /* Bootstrap overrides */
+  --bs-primary: var(--brand-blue);
+  --bs-primary-rgb: 41, 123, 220; /* rgb(41,123,220) */
+  --bs-link-color: var(--brand-blue);
+  --bs-link-hover-color: var(--brand-blue-dark);
 }
 
-/* Override Bootstrap primary to use your blue */
-.btn-primary,
-.bg-primary,
-.text-primary {
-  background-color: var(--brand-blue) !important;
-  border-color: var(--brand-blue) !important;
-  color: var(--brand-white) !important;
+/* Buttons */
+.btn-primary {
+  --bs-btn-bg: var(--brand-blue);
+  --bs-btn-border-color: var(--brand-blue);
+  --bs-btn-hover-bg: var(--brand-blue-dark);
+  --bs-btn-hover-border-color: var(--brand-blue-dark);
+  --bs-btn-active-bg: var(--brand-blue-dark);
+  --bs-btn-active-border-color: var(--brand-blue-dark);
+  --bs-btn-disabled-bg: var(--brand-blue);
+  --bs-btn-disabled-border-color: var(--brand-blue);
+  --bs-btn-focus-shadow-rgb: 41, 123, 220;
+  color: var(--brand-white);
 }
 
-.btn-primary:hover {
-  background-color: var(--brand-blue-dark) !important;
-  border-color: var(--brand-blue-dark) !important;
+.btn-outline-primary {
+  --bs-btn-color: var(--brand-blue);
+  --bs-btn-border-color: var(--brand-blue);
+  --bs-btn-hover-bg: var(--brand-blue);
+  --bs-btn-hover-border-color: var(--brand-blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--brand-blue-dark);
+  --bs-btn-active-border-color: var(--brand-blue-dark);
+  --bs-btn-focus-shadow-rgb: 41, 123, 220;
 }
 
+/* General */
 body {
+  font-family: "Poppins", sans-serif;
   background-color: var(--brand-white);
   color: #212529; /* Bootstrap default text color */
+  line-height: 1.6;
 }
 
+/* Navbar */
 .navbar {
   background-color: var(--brand-white) !important;
 }
 
+.navbar .navbar-brand {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+.navbar .navbar-brand:hover {
+  color: var(--brand-blue-dark);
+}
+
+/* Footer */
 footer {
   background-color: var(--brand-grey);
+}
+
+/* --- Logo band --- */
+.brand-band {
+  background: var(--brand-white);
+}
+
+.brand-strip {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+
+.brand-track {
+  display: inline-flex;
+  gap: 8rem;
+  align-items: center;
+  animation: slideX 18s linear infinite;
+  will-change: transform;
+}
+.brand-track img {
+  height: 45px;
+  opacity: 0.75;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease;
+}
+.brand-track img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+@keyframes slideX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* because we duplicated the set */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
 }
