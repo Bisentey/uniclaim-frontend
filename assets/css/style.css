@@ -5,31 +5,401 @@
   --brand-white: #ffffff;
   --brand-grey: #f8f9fa; /* light grey for backgrounds */
   --brand-dark: #2c2f33; /* dark grey for text or future dark mode */
+
+  /* used by the callout slab (can change to orange later) */
+  --callout-bg: var(--brand-blue);
+
+  /* Bootstrap overrides */
+  --bs-primary: var(--brand-blue);
+  --bs-primary-rgb: 41, 123, 220; /* rgb(41,123,220) */
+  --bs-link-color: var(--brand-blue);
+  --bs-link-hover-color: var(--brand-blue-dark);
 }
 
-/* Override Bootstrap primary to use your blue */
-.btn-primary,
-.bg-primary,
-.text-primary {
-  background-color: var(--brand-blue) !important;
-  border-color: var(--brand-blue) !important;
-  color: var(--brand-white) !important;
+/* Buttons */
+.btn-primary {
+  --bs-btn-bg: var(--brand-blue);
+  --bs-btn-border-color: var(--brand-blue);
+  --bs-btn-hover-bg: var(--brand-blue-dark);
+  --bs-btn-hover-border-color: var(--brand-blue-dark);
+  --bs-btn-active-bg: var(--brand-blue-dark);
+  --bs-btn-active-border-color: var(--brand-blue-dark);
+  --bs-btn-disabled-bg: var(--brand-blue);
+  --bs-btn-disabled-border-color: var(--brand-blue);
+  --bs-btn-focus-shadow-rgb: 41, 123, 220;
+  color: var(--brand-white);
 }
 
-.btn-primary:hover {
-  background-color: var(--brand-blue-dark) !important;
-  border-color: var(--brand-blue-dark) !important;
+.btn-outline-primary {
+  --bs-btn-color: var(--brand-blue);
+  --bs-btn-border-color: var(--brand-blue);
+  --bs-btn-hover-bg: var(--brand-blue);
+  --bs-btn-hover-border-color: var(--brand-blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--brand-blue-dark);
+  --bs-btn-active-border-color: var(--brand-blue-dark);
+  --bs-btn-focus-shadow-rgb: 41, 123, 220;
 }
 
+/* General */
 body {
+  font-family: "Poppins", sans-serif;
   background-color: var(--brand-white);
   color: #212529; /* Bootstrap default text color */
+  line-height: 1.6;
 }
 
+/* General button hover bold */
+.btn:hover {
+  font-weight: 600; /* or 700 for extra bold */
+}
+
+/* Navbar */
 .navbar {
   background-color: var(--brand-white) !important;
 }
 
+.navbar .navbar-brand {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+.navbar .navbar-brand:hover {
+  color: var(--brand-blue-dark);
+}
+
+/* Footer */
 footer {
   background-color: var(--brand-grey);
+}
+
+/* --- Logo band --- */
+.brand-band {
+  background: var(--brand-white);
+}
+
+.brand-strip div {
+  margin-top: 1rem; /* adjust spacing */
+}
+
+.brand-strip {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+
+.brand-track {
+  display: inline-flex;
+  gap: 8rem;
+  align-items: center;
+  animation: slideX 18s linear infinite !important;
+  will-change: transform;
+}
+.brand-track img {
+  height: 45px;
+  opacity: 0.75;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease;
+}
+.brand-track img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+@keyframes slideX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* because we duplicated the set */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
+}
+
+.callout-box {
+  background: var(--callout-bg);
+  border-radius: 16px;
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: 900px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding-top: 12rem;
+}
+
+/* Speech bubbles */
+.bubble {
+  position: absolute;
+  background: #fff;
+  color: #111;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+.bubble-left {
+  top: 14%;
+  left: 8%;
+}
+.bubble-right {
+  top: 24%;
+  right: 10%;
+}
+
+@media (max-width: 991.98px) {
+  /* hide bubbles on small screens to reduce clutter */
+  .bubble {
+    display: none;
+  }
+}
+
+/* Buttons on colored background */
+.btn-outline-light {
+  border-width: 2px;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* =========================
+   How‑it‑works Stepper
+   ========================= */
+.progress-steps {
+  background: #fff;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.progress-steps .step {
+  text-align: center;
+  flex: 0 1 170px; /* room for sentences */
+  min-width: 150px;
+}
+.progress-steps .step p {
+  font-size: 0.85rem;
+  line-height: 1.35;
+  margin-top: 0.5rem;
+  color: #6c757d;
+}
+
+.progress-steps .circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background: #fff;
+  color: var(--brand-blue);
+  margin: 0 auto;
+  transition: all 1.25s ease;
+}
+
+/* active step */
+.progress-steps .step.active .circle {
+  background: var(--brand-blue);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(41, 123, 220, 0.12);
+}
+
+/* connecting line with progressive fill */
+.progress-steps .line {
+  flex: 1;
+  height: 4px;
+  background: #e9edf3;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+.progress-steps .line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--brand-blue);
+  transition: width 0.6s ease;
+}
+
+/* When a step is active, fill the NEXT line */
+.progress-steps .step.active + .line::after {
+  width: 100%;
+}
+
+/* small screens: stack gracefully */
+@media (max-width: 767.98px) {
+  .progress-steps {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .progress-steps .line {
+    flex-basis: 100%;
+    order: 9; /* push lines below circles when wrapping */
+    height: 2px;
+  }
+}
+
+/* Feature cards */
+.feature-card {
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(18, 38, 63, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* thin accent bar at top */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue));
+  opacity: 0.9;
+}
+
+/* icon bubble */
+.feature-card .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(41, 123, 220, 0.1);
+  color: var(--brand-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* text tweaks */
+.feature-card h3 {
+  margin-bottom: 0.35rem;
+}
+.feature-card p {
+  color: #6c7a91;
+}
+
+/* hover */
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(18, 38, 63, 0.1);
+  border-color: rgba(41, 123, 220, 0.35);
+}
+
+/* subtle gradient background variant (optional) */
+.feature-card.is-soft {
+  background: radial-gradient(
+      1200px 200px at -10% -20%,
+      rgba(41, 123, 220, 0.05),
+      transparent 60%
+    ),
+    #fff;
+}
+
+/* keep the animation crisp and centered */
+#lottieSequence svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Auth section background */
+.auth-main {
+  position: relative;
+  /* Replace with your image */
+  background: url("assets/img/auth-bg.jpg") center/cover no-repeat;
+}
+
+/* Soft overlay */
+.auth-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(41, 123, 220, 0.25),
+    /* brand blue tint */ rgba(0, 0, 0, 0.35)
+  );
+}
+
+/* Elevate card slightly over background */
+.auth-main .card {
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(18, 38, 63, 0.18);
+  backdrop-filter: saturate(110%) blur(0px);
+}
+
+/* Optional: ensure enough vertical breathing room on small screens */
+@media (max-width: 575.98px) {
+  .auth-main .container {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+}
+
+.auth-main::before {
+  pointer-events: none;
+}
+
+/* Register button sizing helpers */
+.btn-register {
+  /* default (medium-ish) */
+  --bs-btn-padding-y: 0.6rem;
+  --bs-btn-padding-x: 1.25rem;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-border-radius: 0.75rem;
+}
+
+/* quick modifiers */
+.btn-register.btn-sm {
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-font-size: 0.875rem;
+}
+
+.btn-register.btn-lg {
+  --bs-btn-padding-y: 0.9rem;
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-font-size: 1.125rem;
+}
+
+#resendBtn[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+#resendBtn.btn-link {
+  text-decoration: none !important;
+  font-size: 0.875rem; /* match .small / fs-6 */
+  font-weight: 600; /* fw-semibold */
+  padding: 0;
+}
+
+#resendBtn.btn-link:hover,
+#resendBtn.btn-link:focus {
+  text-decoration: none !important;
+  color: var(--bs-link-hover-color);
+}
+
+/* Wider modal button */
+.btn-modal-wide {
+  --bs-btn-padding-x: 1.25rem; /* wider left/right padding */
+  min-width: 140px; /* consistent width */
 }

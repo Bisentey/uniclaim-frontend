@@ -3,32 +3,45 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UniClaim — School Lost & Found</title>
-    <!-- Bootstrap -->
+    <title>UniClaim - School Lost & Found Tracker</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/img/uniclaim-logo-ver-four.svg">
+    <meta name="theme-color" content="#297bdc">
+
   </head>
   <body>
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg border-bottom sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">UniClaim</a>
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+            <img src="assets/img/uniclaim-logo-ver-four.svg" alt="UniClaim Logo" height="32" class="me-2" />
+            UniClaim
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div id="nav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-primary px-3 fw-bold" href="login.html">Login</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
     <!-- HERO (light) -->
-    <header class="py-5 bg-light">
+    <header class="py-5 bg-white">
       <!-- (kept structure; removed dark-only decorative blobs/stars) -->
       <div class="container position-relative">
         <div class="row align-items-center g-4">
@@ -40,74 +53,149 @@
               UniClaim helps your campus report lost &amp; found items, verify posts, and match owners—securely and fast.
             </p>
             <div class="d-flex flex-column flex-sm-row gap-3 mt-4 justify-content-center justify-content-lg-start">
-              <a href="register.html" class="btn btn-primary btn-lg px-4">Get Started</a>
+              <a href="register.html" class="btn btn-primary btn-lg fw-bold px-4">Get Started</a>
               <a href="login.html" class="btn btn-outline-primary btn-lg px-4">Open in Browser</a>
             </div>
           </div>
-          <div class="col-12 col-lg-5">
-            <div class="p-4 p-md-5 bg-white rounded-4 shadow-sm border">
-              <h2 class="h5 text-muted mb-3">How it works</h2>
-              <ul class="list-unstyled m-0">
-                <li class="d-flex gap-3 mb-3">
-                  <span class="badge bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width:28px;height:28px;">1</span>
-                  <span>Submit a lost or found post with a photo.</span>
-                </li>
-                <li class="d-flex gap-3 mb-3">
-                  <span class="badge bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width:28px;height:28px;">2</span>
-                  <span>Admins review and approve for the feed.</span>
-                </li>
-                <li class="d-flex gap-3">
-                  <span class="badge bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width:28px;height:28px;">3</span>
-                  <span>Matches trigger notifications to owners.</span>
-                </li>
-              </ul>
+  
+            <!-- RIGHT: SVG illustration -->
+            <div class="col-12 col-lg-5 text-center text-lg-end">
+            <img src="assets/img/uniclaim-hand.svg" alt="UniClaim Illustration"
+                class="img-fluid" style="max-width: 80%;">
             </div>
-          </div>
+
+
         </div>
       </div>
     </header>
+
+
+<section class="py-5 brand-band border-top">
+  <div class="container">
+    <p class="text-center text-muted semi mb-4">Trusted by campus teams who reunite items faster</p>
+
+    <!-- infinite scrolling strip -->
+    <div class="brand-strip mt-4">
+      <div class="brand-track">
+        <img src="assets/img/uc_logo.png"  alt="UC">
+        <img src="assets/img/usc_logo.svg" alt="USC">
+        <img src="assets/img/swu_logo.png" alt="SWU">
+        <img src="assets/img/act_logo.png" alt="ACT">
+        <img src="assets/img/mmis_logo.png" alt="MMIS">
+        <img src="assets/img/cnu_logo.png"  alt="CNU">
+        <img src="assets/img/citu_logo.png" alt="CIT-U">
+        <img src="assets/img/stc_logo.png"  alt="STC">
+
+        <!-- Set B (duplicate of A for seamless loop) -->
+        <img src="assets/img/uc_logo.png"  alt="UC">
+        <img src="assets/img/usc_logo.svg" alt="USC">
+        <img src="assets/img/swu_logo.png" alt="SWU">
+        <img src="assets/img/act_logo.png" alt="ACT">
+        <img src="assets/img/mmis_logo.png" alt="MMIS">
+        <img src="assets/img/cnu_logo.png"  alt="CNU">
+        <img src="assets/img/citu_logo.png" alt="CIT-U">
+        <img src="assets/img/stc_logo.png"  alt="STC">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALLOUT / PROMO SECTION -->
+<section class="py-5">
+  <div class="container">
+    <div class="callout-box text-center text-white position-relative mx-auto">
+      <!-- fun speech bubbles -->
+      <div class="bubble bubble-left">“I just lost my ID.”</div>
+      <div class="bubble bubble-right">“This is taking forever…”</div>
+
+      <div class="mb-5"></div>
+
+      <h2 class="display-6 fw-bold mb-3 mt-5">Every campus loses stuff. <br class="d-none d-md-inline">Reuniting it shouldn’t.</h2>
+      <p class="lead mb-4 opacity-90">
+        Thousands of items, one organized place. Post, approve, and match in minutes.
+      </p>
+      
+    </div>
+  </div>
+</section>
+
+        <!-- HOW IT WORKS STEPPER -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="h4 fw-bold text-center mb-4">How it works</h2>
+    
+    <div class="progress-steps d-flex justify-content-between align-items-center flex-wrap" id="stepper">
+      <div class="step active">
+        <div class="circle">1</div>
+        <p class="mt-2 small">Submit a lost or found post with a photo.</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="circle">2</div>
+        <p class="mt-2 small">Admins review and approve for the feed.</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="circle">3</div>
+        <p class="mt-2 small">Matches trigger instant notifications.</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="circle">4</div>
+        <p class="mt-2 small">Owners reclaim items quickly and securely.</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="circle">5</div>
+        <p class="mt-2 small">Lost items find their way back home</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- FEATURES ROW -->
     <section class="py-5">
       <div class="container">
         <div class="row g-4">
           <div class="col-12 text-center mb-2">
-            <h2 class="h3 text-dark">Designed for campus life</h2>
+            <h2 class="display-6 text-dark">Designed for campus life</h2>
             <p class="text-muted">Simple tools for students and admins to reunite items with owners.</p>
           </div>
 
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="mb-3"><span class="badge bg-primary" style="opacity:.15;">&nbsp;&nbsp;&nbsp;</span></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card feature-card is-soft">
+                <div class="card-body">
+                <div class="icon mb-3">✓</div> <!-- you can swap ✓ with any short text/icon -->
                 <h3 class="h5">Clean, Verified Feed</h3>
-                <p class="mb-0 text-muted">Admin approvals keep posts trustworthy and easy to browse.</p>
-              </div>
+                <p class="mb-0">Admin approvals keep posts trustworthy and easy to browse.</p>
+                </div>
             </div>
-          </div>
+        </div>
 
-          <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="mb-3"><span class="badge bg-primary" style="opacity:.15;">&nbsp;&nbsp;&nbsp;</span></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card feature-card is-soft">
+                <div class="card-body">
+                <div class="icon mb-3">✓</div> <!-- you can swap ✓ with any short text/icon -->
                 <h3 class="h5">Smart Matching</h3>
-                <p class="mb-0 text-muted">Match lost ↔ found items and notify owners instantly.</p>
-              </div>
+                <p class="mb-0">Match lost ↔ found items and notify owners instantly.</p>
+                </div>
             </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="mb-3"><span class="badge bg-primary" style="opacity:.15;">&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
+         
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card feature-card is-soft">
+                <div class="card-body">
+                <div class="icon mb-3">✓</div> <!-- you can swap ✓ with any short text/icon -->
                 <h3 class="h5">Custody Tracking</h3>
-                <p class="mb-0 text-muted">Track items held by the office and mark them released.</p>
-              </div>
+                <p class="mb-0">Track items held by the office and mark them released.</p>
+                </div>
             </div>
-          </div>
+        </div>
+         
         </div>
       </div>
     </section>
@@ -122,30 +210,189 @@
               Photos (≤ 5 MB), categories, and locations make posts easy to search and verify.
               Admins control visibility and resolve matches.
             </p>
-            <a href="register.html" class="btn btn-primary mt-2">Create your account</a>
+            <a href="register.html" class="btn btn-primary fw-bold mt-2 py-3">Create your account</a>
           </div>
+
+          <!-- Lottie sequence -->
           <div class="col-12 col-lg-6">
-            <div class="rounded-4 bg-white border" style="min-height:260px;"></div>
-          </div>
+            <div class="p-4 p-md-5 bg-white rounded-4 shadow-sm border">
+                <div class="d-flex flex-column align-items-center">
+                    <div id="lottieSequence"
+                        style="max-width:520px;width:100%;aspect-ratio:16/10;"></div>
+
+                    <!-- Fallback if reduced motion / no JS -->
+                    <img src="assets/img/post-fallback.svg" alt="Lost & found illustration"
+                        class="d-none mt-3" id="lottieFallback" style="max-width:420px;">
+                    </div>
+                </div>
+            </div>
+
         </div>
       </div>
     </section>
 
+
     <!-- FOOTER -->
-    <footer class="py-4 border-top">
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-        <p class="mb-0 small text-muted">© 2025 UniClaim Lost &amp; Found — For academic use</p>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 small" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="login.html">Login</a></li>
-          <li class="nav-item"><a class="nav-link px-2 small" href="forgot.html">Forgot Password</a></li>
+    <footer class="navbar navbar-expand-lg border-top">
+    <div class="container py-3">
+        
+        <p class="mb-0 small text-muted ">© UniClaim 2025</p>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse show">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item me-2">
+            <a class="btn px-3" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn px-3" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn px-3" href="forgot.html">Forgot Password</a>
+            </li>
         </ul>
-      </div>
+        </div>
+    </div>
     </footer>
 
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const stepper = document.getElementById("stepper");
+        if (!stepper) return;
+
+        const steps = stepper.querySelectorAll(".step");
+        const prevBtn = document.querySelector(".step-prev");
+        const nextBtn = document.querySelector(".step-next");
+
+        let current = 0;
+        let timer = null;
+
+        function showStep(index) {
+            steps.forEach((step, i) => step.classList.toggle("active", i <= index));
+            current = index;
+        }
+
+        function nextStep() {
+            const newIndex = (current + 1) % steps.length;
+            showStep(newIndex);
+            resetTimer();
+        }
+
+        function prevStep() {
+            const newIndex = (current - 1 + steps.length) % steps.length;
+            showStep(newIndex);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(nextStep, 2000); // auto-advance every 4s
+        }
+
+        // events
+        if (prevBtn) prevBtn.addEventListener("click", prevStep);
+        if (nextBtn) nextBtn.addEventListener("click", nextStep);
+
+        // optional: pause on hover
+        stepper.addEventListener("mouseenter", () => clearInterval(timer));
+        stepper.addEventListener("mouseleave", resetTimer);
+
+        // go
+        showStep(0);
+        resetTimer();
+        });
+        </script>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('lottieSequence');
+        const fallback  = document.getElementById('lottieFallback');
+        const reduced   = false;
+
+        if (!container || reduced || typeof lottie === 'undefined') {
+            if (fallback) fallback.classList.remove('d-none');
+            return;
+        }
+
+        const sequence = [
+            { path: 'assets/anim/upload.json', name: 'Post Item' },
+            { path: 'assets/anim/search.json', name: 'Search & Match' },
+            { path: 'assets/anim/verify.json', name: 'Verified' },
+        ];
+
+        const PLAY_SPEED = 1.0;
+        const LOOP_EACH  = false;
+
+        let index = 0;
+        let anim  = null;
+
+        function wireEvents(a) {
+            a.loop = false;
+            a.removeEventListener('complete', onAdvance);
+            a.removeEventListener('loopComplete', onAdvance);
+            a.addEventListener('complete', onAdvance);
+            a.addEventListener('loopComplete', onAdvance);
+
+            // safety net: if no event in X ms, advance anyway
+            clearTimeout(a.__safetyTimer);
+            a.__safetyTimer = setTimeout(() => {
+            if (anim === a) next();
+            }, 4000); // adjust duration ~ length of your longest animation
+        }
+
+        function onAdvance() {
+            next();
+        }
+
+        function mountAnimation(a) {
+            container.innerHTML = '';
+            if (a.renderer && a.renderer.svgElement) {
+            container.appendChild(a.renderer.svgElement);
+            }
+            a.goToAndStop(0, true);
+            a.play();
+            wireEvents(a);
+        }
+
+        function loadAndPlay(i) {
+            if (anim) {
+            try { anim.destroy(); } catch (e) {}
+            }
+
+            container.innerHTML = '';
+            anim = lottie.loadAnimation({
+            container,
+            renderer: 'svg',
+            loop: LOOP_EACH,
+            autoplay: false,
+            path: sequence[i].path
+            });
+            anim.setSpeed(PLAY_SPEED);
+            anim.addEventListener('DOMLoaded', () => {
+            mountAnimation(anim);
+            });
+        }
+
+        function next() {
+            index = (index + 1) % sequence.length;
+            loadAndPlay(index);
+        }
+
+        // Start
+        loadAndPlay(index);
+        });
+        </script>
+
   </body>
 </html>
