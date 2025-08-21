@@ -15,8 +15,6 @@ UniClaim is a school-based Lost & Found tracker that streamlines reporting, veri
 
 ## Group Members
 - Vicente Miguel N. Alcala
-- Grachelle Mae A. Carmelotes
-- Edmar Angelo S. Generoso
 
 ## Screenshots
 | Page            | Screenshot                            |
