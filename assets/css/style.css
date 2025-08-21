@@ -6,6 +6,9 @@
   --brand-grey: #f8f9fa; /* light grey for backgrounds */
   --brand-dark: #2c2f33; /* dark grey for text or future dark mode */
 
+  /* used by the callout slab (can change to orange later) */
+  --callout-bg: var(--brand-blue);
+
   /* Bootstrap overrides */
   --bs-primary: var(--brand-blue);
   --bs-primary-rgb: 41, 123, 220; /* rgb(41,123,220) */
@@ -69,6 +72,10 @@ footer {
   background: var(--brand-white);
 }
 
+.brand-strip div {
+  margin-top: 1rem; /* adjust spacing */
+}
+
 .brand-strip {
   position: relative;
   overflow: hidden;
@@ -85,7 +92,7 @@ footer {
   display: inline-flex;
   gap: 8rem;
   align-items: center;
-  animation: slideX 18s linear infinite;
+  animation: slideX 18s linear infinite !important;
   will-change: transform;
 }
 .brand-track img {
@@ -111,5 +118,136 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .brand-track {
     animation: none;
+  }
+}
+
+/* Force animation regardless of OS setting */
+.brand-track {
+  animation: slideX 22s linear infinite !important;
+}
+
+.callout-box {
+  background: var(--callout-bg);
+  border-radius: 16px;
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: 900px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding-top: 12rem;
+}
+
+/* Speech bubbles */
+.bubble {
+  position: absolute;
+  background: #fff;
+  color: #111;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+.bubble-left {
+  top: 14%;
+  left: 8%;
+}
+.bubble-right {
+  top: 24%;
+  right: 10%;
+}
+
+@media (max-width: 991.98px) {
+  /* hide bubbles on small screens to reduce clutter */
+  .bubble {
+    display: none;
+  }
+}
+
+/* Buttons on colored background */
+.btn-outline-light {
+  border-width: 2px;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* =========================
+   How‑it‑works Stepper
+   ========================= */
+.progress-steps {
+  background: #fff;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.progress-steps .step {
+  text-align: center;
+  flex: 0 1 170px; /* room for sentences */
+  min-width: 150px;
+}
+.progress-steps .step p {
+  font-size: 0.85rem;
+  line-height: 1.35;
+  margin-top: 0.5rem;
+  color: #6c757d;
+}
+
+.progress-steps .circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background: #fff;
+  color: var(--brand-blue);
+  margin: 0 auto;
+  transition: all 1.25s ease;
+}
+
+/* active step */
+.progress-steps .step.active .circle {
+  background: var(--brand-blue);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(41, 123, 220, 0.12);
+}
+
+/* connecting line with progressive fill */
+.progress-steps .line {
+  flex: 1;
+  height: 4px;
+  background: #e9edf3;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+.progress-steps .line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--brand-blue);
+  transition: width 0.6s ease;
+}
+
+/* When a step is active, fill the NEXT line */
+.progress-steps .step.active + .line::after {
+  width: 100%;
+}
+
+/* small screens: stack gracefully */
+@media (max-width: 767.98px) {
+  .progress-steps {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .progress-steps .line {
+    flex-basis: 100%;
+    order: 9; /* push lines below circles when wrapping */
+    height: 2px;
   }
 }
