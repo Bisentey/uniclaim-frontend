@@ -1,0 +1,35 @@
+/* === UniClaim Theme Colors === */
+:root {
+  --brand-blue: #297bdc; /* primary blue */
+  --brand-blue-dark: #1f5ca6; /* hover/pressed blue */
+  --brand-white: #ffffff;
+  --brand-grey: #f8f9fa; /* light grey for backgrounds */
+  --brand-dark: #2c2f33; /* dark grey for text or future dark mode */
+}
+
+/* Override Bootstrap primary to use your blue */
+.btn-primary,
+.bg-primary,
+.text-primary {
+  background-color: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+  color: var(--brand-white) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-blue-dark) !important;
+  border-color: var(--brand-blue-dark) !important;
+}
+
+body {
+  background-color: var(--brand-white);
+  color: #212529; /* Bootstrap default text color */
+}
+
+.navbar {
+  background-color: var(--brand-white) !important;
+}
+
+footer {
+  background-color: var(--brand-grey);
+}
